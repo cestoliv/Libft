@@ -1,0 +1,27 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ocartier <ocartier@student.42lyon.f>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/11/03 12:43:33 by ocartier          #+#    #+#             */
+/*   Updated: 2021/11/04 14:04:53 by ocartier         ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include <unistd.h>
+
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
+{
+	size_t	cur;
+
+	cur = 0;
+	while (s1[cur] && s2[cur])
+	{
+		if (s1[cur] != s2[cur] || cur >= n - 1)
+			return ((unsigned char)s1[cur] - (unsigned char)s2[cur]);
+		cur++;
+	}
+	return ((unsigned char)s1[cur] - (unsigned char)s2[cur]);
+}
