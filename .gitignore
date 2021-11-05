@@ -2,4 +2,5 @@
 a.out
 *.o
 *.swp
+*.swo
 libft.a
