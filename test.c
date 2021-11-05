@@ -6,7 +6,7 @@
 /*   By: ocartier <ocartier@student.42lyon.f>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 13:54:05 by ocartier          #+#    #+#             */
-/*   Updated: 2021/11/04 14:32:29 by ocartier         ###   ########lyon.fr   */
+/*   Updated: 2021/11/05 14:07:44 by ocartier         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdio.h>
 #include <ctype.h>
 #include <string.h>
-#include <bsd/string.h>
+#include <string.h>
 #include <stdlib.h>
 
 int	main(void)
@@ -87,6 +87,32 @@ int	main(void)
 	memmove(str_real7 + 20, str_real7 + 15, 11);
 	printf("Real : %s\n", str_real7);
 	printf("Test : %s\n", str_test7);
+
+	printf("\nShift everything to insert 10 at the beginning\n");
+    int data[] = {20, 30, 40, 50, 60, 70, 80, 90, 100, 0};
+    printf("    before ");
+	for(int i=0; i<10; i++)
+        printf("%d ", data[i]);
+    printf("\n");
+    void * source = (void *) data;
+    void * destination = (void *) (data + 1);
+    size_t size = 10 * sizeof( int );
+    ft_memmove(destination, source, size);
+    data[0] = 10;
+    printf("    after  ");
+    for(int i=0; i<10; i++)
+        printf("%d ", data[i]);
+	printf("\n");	
+	
+	printf("\nstr1 : Geeks, str2 : Quiz\n");
+	char str1_test8[] = "Geeks";
+	char str1_real8[] = "Geeks";
+    char str2_test8[] = "Quiz";
+    char str2_real8[] = "Quiz";
+    ft_memmove(str1_test8, str2_test8, sizeof(str2_test8));
+    memmove(str1_real8, str2_real8, sizeof(str2_real8));
+	printf("    Real, str1 : %s, str2 : %s\n", str1_real8, str2_real8);
+	printf("    Test, str1 : %s, str2 : %s\n", str1_test8, str2_test8);
 	// strlcpy
 	printf("\n---- strlcpy ---\n");
 	char src_real2[] = "Hello 42 !";
@@ -167,4 +193,72 @@ int	main(void)
 	printf("' y  +-+1456' : %d, real : %d\n", ft_atoi(" y  +-+1456"), atoi(" y  +-+1456"));
 	printf("'   145o6' : %d, real : %d\n", ft_atoi("   145o6"), atoi("   145o6"));
 	printf("'o' : %d, real : %d\n", ft_atoi("o"), atoi("o"));
+	// calloc
+	printf("\n---- calloc ----\n");
+	int	*calloc_test;
+	calloc_test = (int *)ft_calloc(6, sizeof(int));
+	printf("Calloc an array of 6 int\n    ");
+	for(int i = 0; i < 6; i++)
+		printf("%d ", calloc_test[i]);
+	printf("\n");
+	free(calloc_test);
+	// strdup
+	printf("\n---- strdup ----\n");
+	char *str9 = "Hello 42";
+	char *str10;
+	str10 = ft_strdup(str9);
+	printf("Original : %s, Dup : %s\n", str9, str10);
+	free(str10);
+	// substr
+	printf("\n---- substr ----\n");
+	char *str11 = "Hello 42";
+	char *str12;
+	str12 = ft_substr(str11, 6, 2);
+	printf("substr(\"Hello 42\", 6, 2) : %s\n", str12);
+	free(str12);
+	// strjoin
+	printf("\n---- strjoin ----\n");
+	char *str13 = "Hello";
+	char *str14 = " 42";
+	char *str15 = ft_strjoin(str13, str14);
+	printf("strjoin(\"Hello\", \" 42\") : %s\n", str15);
+	free(str15);
+	// strtrim
+	printf("\n---- strtrim ----\n");
+	char *str16 = ft_strtrim("--__-___----4-2-___---__-_-__--", "-_");
+	printf("\"--__-___----4-2-___---__-_-__--\" trimmed : %s\n", str16);
+	free(str16);
+	// split
+	// itoa
+	// strmapi
+	// striteri
+	// putchar_fd
+	printf("\n---- putchar_fd ----\n");
+	printf(": Put char 'o', on fd 2");
+	ft_putchar_fd('o', 2);
+	printf("\n");
+	// putstr_fd
+	printf("\n---- putstr_fd ----\n");
+	printf(": Put str 'Hello', on fd 2");
+	ft_putstr_fd("Hello", 2);
+	printf("\n");
+	// putendl_fd
+	printf("\n---- putendl_fd ----\n");
+	printf(": Put str and newline 'Hello', on fd 2");
+	ft_putendl_fd("Hello", 2);
+	printf("\n");
+	// putnbr_fd
+	printf("\n---- putnbr_fd ----\n");
+	ft_putnbr_fd(54, 1);
+    ft_putstr_fd("\n", 1);
+    ft_putnbr_fd(540056, 1);
+    ft_putstr_fd("\n", 1);
+    ft_putnbr_fd(0, 1);
+    ft_putstr_fd("\n", 1);
+    ft_putnbr_fd(-54, 1);
+    ft_putstr_fd("\n", 1);
+    ft_putnbr_fd(-2147483648, 1);
+    ft_putstr_fd("\n", 1);
+    ft_putnbr_fd(2147483647, 1);
+    ft_putstr_fd("\n", 1);
 }
