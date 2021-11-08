@@ -6,7 +6,7 @@
 /*   By: ocartier <ocartier@student.42lyon.f>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 13:54:05 by ocartier          #+#    #+#             */
-/*   Updated: 2021/11/08 11:52:41 by ocartier         ###   ########lyon.fr   */
+/*   Updated: 2021/11/08 12:41:05 by ocartier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -243,6 +243,7 @@ int	main(void)
 	char *str16 = ft_strtrim("--__-___----4-2-___---__-_-__--", "-_");
 	printf("\"--__-___----4-2-___---__-_-__--\" trimmed : %s\n", str16);
 	free(str16);
+	printf("'    ' trimmed : '%s'", ft_strtrim("    "));
 	// split
 	printf("\n---- split ----\n");
 	char	**result;
@@ -267,7 +268,6 @@ int	main(void)
 	printf("2147483647 to string : %s\n", ft_itoa(2147483647));
 	printf("-2147483648 to string : %s\n", ft_itoa(-2147483648));
 	// strmapi
-	/*
 	printf("\n---- strmapi ----\n");
 	char a[20];
 	char b[20];
@@ -275,7 +275,6 @@ int	main(void)
 	strcpy(a, "Hello 42");
 	b = ft_strmapi(a, to_upper2);
 	printf("%s\n", b);
-	*/
 	// striteri
 	printf("\n---- striteri ----\n");
 	char c[20];
