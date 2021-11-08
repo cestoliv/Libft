@@ -1,31 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_lstlast.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ocartier <ocartier@student.42lyon.f>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/04 12:57:31 by ocartier          #+#    #+#             */
-/*   Updated: 2021/11/08 15:07:56 by ocartier         ###   ########lyon.fr   */
+/*   Created: 2021/11/08 13:30:51 by ocartier          #+#    #+#             */
+/*   Updated: 2021/11/08 14:46:57 by ocartier         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
+t_list	*ft_lstlast(t_list *lst)
 {
-	size_t	src_len;
-	size_t	cur;
-
-	src_len = ft_strlen(dst);
-	cur = 0;
-	if (dstsize <= src_len)
-		return (ft_strlen(src) + dstsize);
-	while (src[cur] && (src_len + cur) < (dstsize - 1))
-	{
-		dst[src_len + cur] = src[cur];
-		cur++;
-	}
-	dst[src_len + cur] = 0;
-	return (ft_strlen(src) + src_len);
+	if (lst)
+		while (lst->next)
+			lst = lst->next;
+	return (lst);
 }
