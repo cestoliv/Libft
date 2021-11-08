@@ -6,7 +6,7 @@
 /*   By: ocartier <ocartier@student.42lyon.f>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 13:54:05 by ocartier          #+#    #+#             */
-/*   Updated: 2021/11/05 14:07:44 by ocartier         ###   ########lyon.fr   */
+/*   Updated: 2021/11/08 11:52:41 by ocartier         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,19 @@
 #include <string.h>
 #include <string.h>
 #include <stdlib.h>
+
+void	to_upper(char *a)
+{
+	if (*a >= 'a' && *a <= 'z')
+		*a = *a - 32;
+}
+
+void	to_upper2(unsigned int i, char *a)
+{
+	(void)i;
+	if (*a >= 'a' && *a <= 'z')
+		*a = *a - 32;
+}
 
 int	main(void)
 {
@@ -88,6 +101,7 @@ int	main(void)
 	printf("Real : %s\n", str_real7);
 	printf("Test : %s\n", str_test7);
 
+	/*
 	printf("\nShift everything to insert 10 at the beginning\n");
     int data[] = {20, 30, 40, 50, 60, 70, 80, 90, 100, 0};
     printf("    before ");
@@ -103,7 +117,8 @@ int	main(void)
     for(int i=0; i<10; i++)
         printf("%d ", data[i]);
 	printf("\n");	
-	
+	*/
+
 	printf("\nstr1 : Geeks, str2 : Quiz\n");
 	char str1_test8[] = "Geeks";
 	char str1_real8[] = "Geeks";
@@ -229,9 +244,45 @@ int	main(void)
 	printf("\"--__-___----4-2-___---__-_-__--\" trimmed : %s\n", str16);
 	free(str16);
 	// split
+	printf("\n---- split ----\n");
+	char	**result;
+	int		cur;
+
+	printf("Hello World    !! :\n");
+	result = ft_split("Hello World    !!", ' ');
+	cur = -1;
+	while (cur++, result[cur] != 0)
+		printf("%d => %s\n", cur, result[cur]);
+
+	printf("\naaaa bbbb..cccc .dddd!!eeee :\n");
+	result = ft_split("aaaa bbbb..cccc .dddd!!eeee", '.');
+	cur = -1;
+	while (cur++, result[cur] != 0)
+		printf("%d => %s\n", cur, result[cur]);
 	// itoa
+	printf("\n---- itoa ----\n");
+	printf("48 to string : %s\n", ft_itoa(48));
+	printf("0 to string : %s\n", ft_itoa(0));
+	printf("-6115048 to string : %s\n", ft_itoa(-6115048));
+	printf("2147483647 to string : %s\n", ft_itoa(2147483647));
+	printf("-2147483648 to string : %s\n", ft_itoa(-2147483648));
 	// strmapi
+	/*
+	printf("\n---- strmapi ----\n");
+	char a[20];
+	char b[20];
+	printf("Will put 'Hello 42' to upper case\n");
+	strcpy(a, "Hello 42");
+	b = ft_strmapi(a, to_upper2);
+	printf("%s\n", b);
+	*/
 	// striteri
+	printf("\n---- striteri ----\n");
+	char c[20];
+	printf("Will put 'Hello 42' to upper case\n");
+	strcpy(c, "Hello 42");
+	ft_striteri(c, to_upper2);
+	printf("%s\n", c);
 	// putchar_fd
 	printf("\n---- putchar_fd ----\n");
 	printf(": Put char 'o', on fd 2");
