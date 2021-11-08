@@ -6,18 +6,20 @@
 /*   By: ocartier <ocartier@student.42lyon.f>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 11:22:13 by ocartier          #+#    #+#             */
-/*   Updated: 2021/11/05 11:50:30 by ocartier         ###   ########lyon.fr   */
+/*   Updated: 2021/11/08 15:36:06 by ocartier         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 #include <stdlib.h>
 
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*sub;
 
-	sub = (char *)malloc(len * sizeof(char));
+	if (ft_strlen(s) < start)
+		return ("");
+	sub = (char *)malloc((len + 1) * sizeof(char));
 	if (!sub)
 		return (NULL);
 	sub[len] = 0;
