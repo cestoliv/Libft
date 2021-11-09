@@ -51,10 +51,10 @@ CC			= gcc -Wall -Wextra -Werror
 
 all:		${NAME}
 
-$(NAME):	${OBJS}
+$(NAME):	${OBJS} libft.h
 			ar rcs ${NAME} ${OBJS}
 
-bonus:		${OBJS_BONUS}
+bonus:		${OBJS_BONUS} libft.h
 			ar rcs ${NAME} ${OBJS_BONUS}
 
 clean:
