@@ -6,13 +6,12 @@
 /*   By: ocartier <ocartier@student.42lyon.f>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 12:17:27 by ocartier          #+#    #+#             */
-/*   Updated: 2021/11/08 13:14:39 by ocartier         ###   ########lyon.fr   */
+/*   Updated: 2021/11/09 11:10:00 by ocartier         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
-#include <stdio.h>
 
 static int	is_in_set(char const c, char const *set)
 {
@@ -45,10 +44,22 @@ static char	*rev_str(char const *str)
 	return (rev);
 }
 
+static char	*empty_string(void)
+{
+	char	*str;
+
+	str = malloc(sizeof(char));
+	if (!str)
+		return (NULL);
+	ft_strlcpy(str, "", 1);
+	return (str);
+}
+
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	start;
 	size_t	end;
+	size_t	s1_len;
 	char	*trim;
 	char	*s1_rev;
 
@@ -59,6 +70,9 @@ char	*ft_strtrim(char const *s1, char const *set)
 	if (!s1_rev)
 		return (NULL);
 	end = 0;
+	s1_len = ft_strlen(s1);
+	if (start == s1_len)
+		return (empty_string());
 	while (is_in_set(s1_rev[end], set))
 		end++;
 	end = ft_strlen(s1) - end;

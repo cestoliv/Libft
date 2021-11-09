@@ -6,14 +6,14 @@
 /*   By: ocartier <ocartier@student.42lyon.f>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 10:17:23 by ocartier          #+#    #+#             */
-/*   Updated: 2021/11/08 12:37:18 by ocartier         ###   ########.fr       */
+/*   Updated: 2021/11/09 11:11:43 by ocartier         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-int	num_digit(long num)
+static int	num_digit(long num)
 {
 	int	cur;
 

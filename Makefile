@@ -1,4 +1,4 @@
-SCRS		= ft_atoi.c \
+SRCS		= ft_atoi.c \
 			  ft_bzero.c \
 			  ft_calloc.c \
 			  ft_isalnum.c \
@@ -7,15 +7,6 @@ SCRS		= ft_atoi.c \
 			  ft_isdigit.c \
 			  ft_isprint.c \
 			  ft_itoa.c \
-			  ft_lstadd_back.c \
-			  ft_lstadd_front.c \
-			  ft_lstclear.c \
-			  ft_lstdelone.c \
-			  ft_lstiter.c \
-			  ft_lstlast.c \
-			  ft_lstmap.c \
-			  ft_lstnew.c \
-			  ft_lstsize.c \
 			  ft_memchr.c \
 			  ft_memcmp.c \
 			  ft_memcpy.c \
@@ -41,7 +32,17 @@ SCRS		= ft_atoi.c \
 			  ft_substr.c \
 			  ft_tolower.c \
 			  ft_toupper.c
-OBJS		= ${SCRS:.c=.o}
+SRCS_BONUS	= ft_lstadd_back.c \
+			  ft_lstadd_front.c \
+			  ft_lstclear.c \
+			  ft_lstdelone.c \
+			  ft_lstiter.c \
+			  ft_lstlast.c \
+			  ft_lstmap.c \
+			  ft_lstnew.c \
+			  ft_lstsize.c
+OBJS		= ${SRCS:.c=.o}
+OBJS_BONUS	= ${SRCS_BONUS:.c=.o}
 NAME		= libft.a
 CC			= gcc -Wall -Wextra -Werror
 
@@ -53,8 +54,11 @@ all:		${NAME}
 $(NAME):	${OBJS}
 			ar rcs ${NAME} ${OBJS}
 
+bonus:		${OBJS_BONUS}
+			ar rcs ${NAME} ${OBJS_BONUS}
+
 clean:
-			rm -f ${OBJS}
+			rm -f ${OBJS} ${OBJS_BONUS}
 
 fclean:		clean
 			rm -f ${NAME}

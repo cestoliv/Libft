@@ -6,14 +6,14 @@
 /*   By: ocartier <ocartier@student.42lyon.f>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 09:43:49 by ocartier          #+#    #+#             */
-/*   Updated: 2021/11/08 10:13:25 by ocartier         ###   ########lyon.fr   */
+/*   Updated: 2021/11/09 11:11:14 by ocartier         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdlib.h>
 
-int	numwords(char const *s, char c)
+static int	numwords(char const *s, char c)
 {
 	int	cur;
 	int	word_num;
