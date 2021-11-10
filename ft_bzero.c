@@ -6,11 +6,11 @@
 /*   By: ocartier <ocartier@student.42lyon.f>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 11:01:18 by ocartier          #+#    #+#             */
-/*   Updated: 2021/11/04 14:03:25 by ocartier         ###   ########lyon.fr   */
+/*   Updated: 2021/11/10 08:57:27 by ocartier         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 void	ft_bzero(void *s, size_t n)
 {

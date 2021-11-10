@@ -6,12 +6,11 @@
 /*   By: ocartier <ocartier@student.42lyon.f>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 13:14:56 by ocartier          #+#    #+#             */
-/*   Updated: 2021/11/08 13:18:08 by ocartier         ###   ########lyon.fr   */
+/*   Updated: 2021/11/10 09:03:58 by ocartier         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 t_list	*ft_lstnew(void *content)
 {

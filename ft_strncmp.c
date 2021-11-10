@@ -6,11 +6,11 @@
 /*   By: ocartier <ocartier@student.42lyon.f>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/03 12:43:33 by ocartier          #+#    #+#             */
-/*   Updated: 2021/11/04 14:04:53 by ocartier         ###   ########lyon.fr   */
+/*   Updated: 2021/11/10 09:09:20 by ocartier         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {

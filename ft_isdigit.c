@@ -6,14 +6,11 @@
 /*   By: ocartier <ocartier@student.42lyon.f>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 13:59:08 by ocartier          #+#    #+#             */
-/*   Updated: 2021/11/02 14:18:09 by ocartier         ###   ########lyon.fr   */
+/*   Updated: 2021/11/10 08:59:43 by ocartier         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isdigit(int c)
 {
-	if (c >= '0' && c <= '9')
-		return (1);
-	else
-		return (0);
+	return (c >= '0' && c <= '9');
 }

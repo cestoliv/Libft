@@ -6,12 +6,11 @@
 /*   By: ocartier <ocartier@student.42lyon.f>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 10:17:23 by ocartier          #+#    #+#             */
-/*   Updated: 2021/11/09 11:11:43 by ocartier         ###   ########lyon.fr   */
+/*   Updated: 2021/11/10 09:00:05 by ocartier         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 static int	num_digit(long num)
 {

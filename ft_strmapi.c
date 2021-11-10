@@ -6,12 +6,11 @@
 /*   By: ocartier <ocartier@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 11:52:53 by ocartier          #+#    #+#             */
-/*   Updated: 2021/11/06 11:53:11 by ocartier         ###   ########.fr       */
+/*   Updated: 2021/11/10 09:09:05 by ocartier         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {

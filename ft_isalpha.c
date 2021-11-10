@@ -6,14 +6,11 @@
 /*   By: ocartier <ocartier@student.42lyon.f>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 12:23:11 by ocartier          #+#    #+#             */
-/*   Updated: 2021/11/02 14:17:33 by ocartier         ###   ########lyon.fr   */
+/*   Updated: 2021/11/10 08:59:16 by ocartier         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isalpha(int c)
 {
-	if ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'))
-		return (1);
-	else
-		return (0);
+	return ((c >= 'A' && c <= 'Z') || (c >= 'a' && c <= 'z'));
 }

@@ -6,7 +6,7 @@
 /*   By: ocartier <ocartier@student.42lyon.f>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 14:28:00 by ocartier          #+#    #+#             */
-/*   Updated: 2021/11/09 09:26:47 by ocartier         ###   ########lyon.fr   */
+/*   Updated: 2021/11/10 09:02:55 by ocartier         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 {
-	t_list	*begin_lst;
 	t_list	*changed_list;
 	t_list	*changed_elem;
 
@@ -24,7 +23,7 @@ t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *))
 		changed_elem = ft_lstnew(f(lst->content));
 		if (!changed_elem)
 		{
-			ft_lstclear(&begin_lst, del);
+			ft_lstclear(&changed_list, del);
 			return (NULL);
 		}
 		ft_lstadd_back(&changed_list, changed_elem);

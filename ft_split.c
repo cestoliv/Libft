@@ -6,12 +6,11 @@
 /*   By: ocartier <ocartier@student.42lyon.f>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 09:43:49 by ocartier          #+#    #+#             */
-/*   Updated: 2021/11/09 11:11:14 by ocartier         ###   ########lyon.fr   */
+/*   Updated: 2021/11/10 09:13:26 by ocartier         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <stdlib.h>
 
 static int	numwords(char const *s, char c)
 {
@@ -32,26 +31,28 @@ static int	numwords(char const *s, char c)
 char	**ft_split(char const *s, char c)
 {
 	char	**result;
-	int		cur;
-	int		w_cur;
-	int		s_cur;
+	int		end_cur;
+	int		word;
+	int		start_cur;
 
 	result = malloc(sizeof(char *) * (numwords(s, c) + 1));
-	cur = 0;
-	w_cur = 0;
-	s_cur = 0;
-	while (s[cur])
+	if (!result)
+		return (NULL);
+	end_cur = 0;
+	word = 0;
+	start_cur = 0;
+	while (s[end_cur])
 	{
-		if (s[cur] == c || s[cur] == 0)
-			s_cur = cur + 1;
-		if (s[cur] != c && (s[cur + 1] == c || s[cur + 1] == 0))
+		if (s[end_cur] == c || s[end_cur] == 0)
+			start_cur = end_cur + 1;
+		if (s[end_cur] != c && (s[end_cur + 1] == c || s[end_cur + 1] == 0))
 		{
-			result[w_cur] = malloc(sizeof(char) * (cur - s_cur + 2));
-			ft_strlcpy(result[w_cur], (s + s_cur), cur - s_cur + 2);
-			w_cur++;
+			result[word] = malloc(sizeof(char) * (end_cur - start_cur + 2));
+			ft_strlcpy(result[word], (s + start_cur), end_cur - start_cur + 2);
+			word++;
 		}
-		cur++;
+		end_cur++;
 	}
-	result[w_cur] = 0;
+	result[word] = 0;
 	return (result);
 }

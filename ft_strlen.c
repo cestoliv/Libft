@@ -6,11 +6,11 @@
 /*   By: ocartier <ocartier@student.42lyon.f>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 14:44:04 by ocartier          #+#    #+#             */
-/*   Updated: 2021/11/02 14:54:47 by ocartier         ###   ########lyon.fr   */
+/*   Updated: 2021/11/10 09:08:57 by ocartier         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 size_t	ft_strlen(const char *s)
 {

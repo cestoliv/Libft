@@ -6,11 +6,10 @@
 /*   By: ocartier <ocartier@student.42lyon.f>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 10:37:50 by ocartier          #+#    #+#             */
-/*   Updated: 2021/11/08 14:56:57 by ocartier         ###   ########lyon.fr   */
+/*   Updated: 2021/11/10 09:08:16 by ocartier         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdlib.h>
 #include "libft.h"
 
 char	*ft_strdup(const char *s1)

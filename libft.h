@@ -6,13 +6,14 @@
 /*   By: ocartier <ocartier@student.42lyon.f>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 13:48:49 by ocartier          #+#    #+#             */
-/*   Updated: 2021/11/09 11:28:33 by ocartier         ###   ########lyon.fr   */
+/*   Updated: 2021/11/10 08:58:10 by ocartier         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 # include <unistd.h>
+# include <stdlib.h>
 
 typedef struct s_list
 {

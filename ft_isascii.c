@@ -6,14 +6,11 @@
 /*   By: ocartier <ocartier@student.42lyon.f>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/02 14:28:09 by ocartier          #+#    #+#             */
-/*   Updated: 2021/11/02 14:29:12 by ocartier         ###   ########lyon.fr   */
+/*   Updated: 2021/11/10 08:59:32 by ocartier         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_isascii(int c)
 {
-	if (c >= 0 && c <= 127)
-		return (1);
-	else
-		return (0);
+	return (c >= 0 && c <= 127);
 }

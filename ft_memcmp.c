@@ -6,11 +6,11 @@
 /*   By: ocartier <ocartier@student.42lyon.f>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 11:30:40 by ocartier          #+#    #+#             */
-/*   Updated: 2021/11/04 14:06:02 by ocartier         ###   ########lyon.fr   */
+/*   Updated: 2021/11/10 09:04:30 by ocartier         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
+#include "libft.h"
 
 int	ft_memcmp(const void *s1, const void *s2, size_t n)
 {

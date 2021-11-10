@@ -46,7 +46,7 @@ OBJS_BONUS	= ${SRCS_BONUS:.c=.o}
 NAME		= libft.a
 CC			= gcc -Wall -Wextra -Werror
 
-.c.o:
+%.o: %.c libft.h
 			${CC} -I. -c $< -o ${<:.c=.o}
 
 all:		${NAME}
