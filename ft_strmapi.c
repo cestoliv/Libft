@@ -6,7 +6,7 @@
 /*   By: ocartier <ocartier@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/06 11:52:53 by ocartier          #+#    #+#             */
-/*   Updated: 2021/11/10 14:42:59 by ocartier         ###   ########.fr       */
+/*   Updated: 2021/11/10 14:44:51 by ocartier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	char	*result;
 	size_t	cur;
 
+	if (!s || !f)
+		return (NULL);
 	result = (char *)malloc((ft_strlen(s) + 1) * sizeof(char));
 	if (!result)
 		return (NULL);
