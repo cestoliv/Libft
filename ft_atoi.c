@@ -6,15 +6,15 @@
 /*   By: ocartier <ocartier@student.42lyon.f>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 10:33:55 by ocartier          #+#    #+#             */
-/*   Updated: 2021/11/04 14:03:07 by ocartier         ###   ########lyon.fr   */
+/*   Updated: 2021/11/11 09:58:33 by ocartier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 int	ft_atoi(const char *str)
 {
-	int	cur;
-	int	num;
-	int	sign;
+	int				cur;
+	unsigned int	num;
+	int				sign;
 
 	cur = 0;
 	num = 0;
