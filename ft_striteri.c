@@ -6,7 +6,7 @@
 /*   By: ocartier <ocartier@student.42lyon.f>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 11:38:55 by ocartier          #+#    #+#             */
-/*   Updated: 2021/11/10 09:08:25 by ocartier         ###   ########lyon.fr   */
+/*   Updated: 2021/11/11 09:54:41 by ocartier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	int	cur;
 
+	if (s && f)
 	cur = 0;
 	while (s[cur])
 	{
