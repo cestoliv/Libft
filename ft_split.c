@@ -6,7 +6,7 @@
 /*   By: ocartier <ocartier@student.42lyon.f>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 09:43:49 by ocartier          #+#    #+#             */
-/*   Updated: 2021/11/10 09:13:26 by ocartier         ###   ########lyon.fr   */
+/*   Updated: 2021/11/11 09:52:02 by ocartier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,18 +28,12 @@ static int	numwords(char const *s, char c)
 	return (word_num);
 }
 
-char	**ft_split(char const *s, char c)
+static int	split_words(char **result, char const *s, char c, int word)
 {
-	char	**result;
-	int		end_cur;
-	int		word;
 	int		start_cur;
+	int		end_cur;
 
-	result = malloc(sizeof(char *) * (numwords(s, c) + 1));
-	if (!result)
-		return (NULL);
 	end_cur = 0;
-	word = 0;
 	start_cur = 0;
 	while (s[end_cur])
 	{
@@ -48,11 +42,31 @@ char	**ft_split(char const *s, char c)
 		if (s[end_cur] != c && (s[end_cur + 1] == c || s[end_cur + 1] == 0))
 		{
 			result[word] = malloc(sizeof(char) * (end_cur - start_cur + 2));
+			if (!result[word])
+			{
+				while (word)
+					free(result[word]);
+				return (0);
+			}
 			ft_strlcpy(result[word], (s + start_cur), end_cur - start_cur + 2);
 			word++;
 		}
 		end_cur++;
 	}
 	result[word] = 0;
+	return (1);
+}
+
+char	**ft_split(char const *s, char c)
+{
+	char	**result;
+
+	if (!s)
+		return (NULL);
+	result = malloc(sizeof(char *) * (numwords(s, c) + 1));
+	if (!result)
+		return (NULL);
+	if (!split_words(result, s, c, 0))
+		return (NULL);
 	return (result);
 }

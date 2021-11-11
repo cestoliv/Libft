@@ -6,7 +6,7 @@
 /*   By: ocartier <ocartier@student.42lyon.f>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 12:17:27 by ocartier          #+#    #+#             */
-/*   Updated: 2021/11/10 09:09:51 by ocartier         ###   ########lyon.fr   */
+/*   Updated: 2021/11/11 09:40:48 by ocartier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	size_t	s1_len;
 	char	*trim;
 
+	if (!s1 || !set)
+		return (NULL);
 	start = 0;
 	while (is_in_set(s1[start], set))
 		start++;
