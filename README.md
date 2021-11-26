@@ -1,5 +1,9 @@
 # Libft
 
+```
+FINAL GRADE: 125/100
+```
+
 This is my **libft**, first project of the 42cursus.
 
 It has been tested with the following tests:
