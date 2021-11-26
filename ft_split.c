@@ -6,7 +6,7 @@
 /*   By: ocartier <ocartier@student.42lyon.f>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/08 09:43:49 by ocartier          #+#    #+#             */
-/*   Updated: 2021/11/11 09:52:02 by ocartier         ###   ########.fr       */
+/*   Updated: 2021/11/26 13:52:09 by ocartier         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ static int	split_words(char **result, char const *s, char c, int word)
 			result[word] = malloc(sizeof(char) * (end_cur - start_cur + 2));
 			if (!result[word])
 			{
-				while (word)
+				while (word++)
 					free(result[word]);
 				return (0);
 			}
