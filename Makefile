@@ -31,8 +31,8 @@ SRCS		= ft_atoi.c \
 			  ft_strtrim.c \
 			  ft_substr.c \
 			  ft_tolower.c \
-			  ft_toupper.c
-SRCS_BONUS	= ft_lstadd_back.c \
+			  ft_toupper.c \
+			  ft_lstadd_back.c \
 			  ft_lstadd_front.c \
 			  ft_lstclear.c \
 			  ft_lstdelone.c \
@@ -40,29 +40,28 @@ SRCS_BONUS	= ft_lstadd_back.c \
 			  ft_lstlast.c \
 			  ft_lstmap.c \
 			  ft_lstnew.c \
-			  ft_lstsize.c
+			  ft_lstsize.c \
+			  get_next_line/get_next_line.c \
+			  get_next_line/get_next_line_utils.c
 OBJS		= ${SRCS:.c=.o}
-OBJS_BONUS	= ${SRCS_BONUS:.c=.o}
 NAME		= libft.a
 CC			= gcc -Wall -Wextra -Werror
+BUFFER_SIZE = 4096
 
-%.o: %.c libft.h
-			${CC} -I. -c $< -o ${<:.c=.o}
+%.o: %.c libft.h get_next_line/get_next_line.h
+			${CC} -D BUFFER_SIZE=${BUFFER_SIZE} -I. -c $< -o ${<:.c=.o}
 
 all:		${NAME}
 
-$(NAME):	${OBJS} libft.h
+$(NAME):	${OBJS} libft.h get_next_line/get_next_line.h
 			ar rcs ${NAME} ${OBJS}
 
-bonus:		${OBJS_BONUS} libft.h
-			ar rcs ${NAME} ${OBJS_BONUS}
-
 clean:
-			rm -f ${OBJS} ${OBJS_BONUS}
+			rm -f ${OBJS}
 
 fclean:		clean
 			rm -f ${NAME}
 
 re:			fclean all
 
-.PHONY:		all clean fclean re bonus
+.PHONY:		all clean fclean re
