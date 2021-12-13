@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   get_next_line.c                                    :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ocartier <ocartier@student.42lyon.f>       +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2021/12/13 10:58:42 by ocartier          #+#    #+#             */
+/*   Updated: 2021/12/13 10:58:44 by ocartier         ###   ########lyon.fr   */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "get_next_line.h"
 #include <stdlib.h>
 #include <unistd.h>
@@ -109,8 +121,8 @@ char	*get_next_line(int fd, int do_clear)
 	}
 	else
 		readed = ft_substr(cur_prev->prev, 0, ft_strlen(cur_prev->prev));
-    if (cur < 0 || do_clear)
-        prevs = delete_prev(prevs, fd);
+	if (cur < 0 || do_clear)
+		prevs = delete_prev(prevs, fd);
 	if (ft_strlen(readed) == 0)
 	{
 		free(readed);

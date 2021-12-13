@@ -1,18 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_next_line_bonus.h                              :+:      :+:    :+:   */
+/*   get_next_line.h                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ocartier <ocartier@student.42lyon.f>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2021/11/26 12:25:10 by ocartier          #+#    #+#             */
-/*   Updated: 2021/12/10 16:03:14 by ocartier         ###   ########lyon.fr   */
+/*   Created: 2021/12/13 10:56:30 by ocartier          #+#    #+#             */
+/*   Updated: 2021/12/13 10:58:34 by ocartier         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GET_NEXT_LINE_BONUS_H
-# define GET_NEXT_LINE_BONUS_H
+#ifndef GET_NEXT_LINE_H
+# define GET_NEXT_LINE_H
 # include <unistd.h>
+# define GNL_CLEAR 1
+# define GNL_KEEP 0
 
 typedef struct s_prev_list
 {
