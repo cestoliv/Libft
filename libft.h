@@ -6,7 +6,7 @@
 /*   By: ocartier <ocartier@student.42lyon.f>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/04 13:48:49 by ocartier          #+#    #+#             */
-/*   Updated: 2021/12/10 16:02:59 by ocartier         ###   ########lyon.fr   */
+/*   Updated: 2021/12/13 11:02:31 by ocartier         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define LIBFT_H
 # include <unistd.h>
 # include <stdlib.h>
+# define GNL_CLEAR 1
+# define GNL_KEEP 0
 
 typedef struct s_list
 {
