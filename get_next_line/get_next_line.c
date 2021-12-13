@@ -91,7 +91,7 @@ t_prev_list	*get_prev(t_prev_list **prevs, int fd)
 	return (cur_prev);
 }
 
-char	*get_next_line(int fd)
+char	*get_next_line(int fd, int do_clear)
 {
 	static t_prev_list	*prevs = NULL;
 	t_prev_list			*cur_prev;
@@ -108,10 +108,9 @@ char	*get_next_line(int fd)
 		shiftstr(&(cur_prev->prev), cur + 1);
 	}
 	else
-	{
 		readed = ft_substr(cur_prev->prev, 0, ft_strlen(cur_prev->prev));
-		prevs = delete_prev(prevs, fd);
-	}
+    if (cur < 0 || do_clear)
+        prevs = delete_prev(prevs, fd);
 	if (ft_strlen(readed) == 0)
 	{
 		free(readed);
