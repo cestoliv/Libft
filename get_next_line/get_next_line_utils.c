@@ -3,25 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ocartier <ocartier@student.42lyon.f>       +#+  +:+       +#+        */
+/*   By: ocartier <ocartier@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/12 09:50:24 by ocartier          #+#    #+#             */
-/*   Updated: 2021/12/10 16:05:28 by ocartier         ###   ########lyon.fr   */
+/*   Updated: 2021/12/14 12:18:55 by ocartier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "get_next_line.h"
 #include <stdlib.h>
-
-size_t	ft_strlen(const char *s)
-{
-	size_t	cur;
-
-	cur = 0;
-	while (s[cur])
-		cur++;
-	return (cur);
-}
 
 void	shiftstr(char **str, size_t start)
 {
@@ -48,7 +38,7 @@ long	charchr(const char *s, char c)
 	return (-1);
 }
 
-char	*ft_strjoin(char *s1, char const *s2)
+char	*gnl_strjoin(char *s1, char const *s2)
 {
 	size_t	s1_len;
 	size_t	s2_len;
@@ -74,7 +64,7 @@ char	*ft_strjoin(char *s1, char const *s2)
 	return (result);
 }
 
-char	*ft_substr(char const *s, unsigned int start, size_t len)
+char	*gnl_substr(char const *s, unsigned int start, size_t len)
 {
 	char	*sub;
 	size_t	new_len;
