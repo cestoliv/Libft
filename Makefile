@@ -42,18 +42,27 @@ SRCS		= ft_atoi.c \
 			  ft_lstnew.c \
 			  ft_lstsize.c \
 			  get_next_line/get_next_line.c \
-			  get_next_line/get_next_line_utils.c
+			  get_next_line/get_next_line_utils.c \
+			  ft_printf/ft_printf.c \
+			  ft_printf/print_utils/utils.c \
+			  ft_printf/print_utils/ft_printchar.c \
+			  ft_printf/print_utils/ft_printstr.c \
+			  ft_printf/print_utils/ft_printpointer.c \
+			  ft_printf/print_utils/ft_printnum.c \
+			  ft_printf/print_utils/ft_printunum.c \
+			  ft_printf/print_utils/ft_printbnum.c
 OBJS		= ${SRCS:.c=.o}
+HEADERS		= libft.h get_next_line/get_next_line.h ft_printf/ft_printf.h
 NAME		= libft.a
 CC			= gcc -Wall -Wextra -Werror
 BUFFER_SIZE = 4096
 
-%.o: %.c libft.h get_next_line/get_next_line.h
+%.o: %.c ${HEADERS}
 			${CC} -D BUFFER_SIZE=${BUFFER_SIZE} -I. -c $< -o ${<:.c=.o}
 
 all:		${NAME}
 
-$(NAME):	${OBJS} libft.h get_next_line/get_next_line.h
+$(NAME):	${OBJS} ${HEADERS}
 			ar rcs ${NAME} ${OBJS}
 
 clean:

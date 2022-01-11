@@ -1,0 +1,8 @@
+*.swp
+*.out
+*.o
+*.a
+*.out.*
+printfTester/
+ft_printf_tester/
+pft/
