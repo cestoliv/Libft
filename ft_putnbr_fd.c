@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ocartier <ocartier@student.42lyon.f>       +#+  +:+       +#+        */
+/*   By: ocartier <ocartier@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/05 13:51:13 by ocartier          #+#    #+#             */
-/*   Updated: 2021/11/05 14:07:58 by ocartier         ###   ########lyon.fr   */
+/*   Updated: 2021/12/15 10:57:09 by ocartier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@ void	ft_putnbr_fd(int n, int fd)
 	}
 	if (nl > 100)
 		ft_putnbr_fd(nl / 10, fd);
+	else if (nl == 100)
+		ft_putstr_fd("10", fd);
 	else if ((nl / 10) > 0)
 		ft_putchar_fd((nl / 10) + '0', fd);
 	ft_putchar_fd((nl % 10) + '0', fd);

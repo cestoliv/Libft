@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ocartier <ocartier@student.42lyon.f>       +#+  +:+       +#+        */
+/*   By: ocartier <ocartier@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 10:58:42 by ocartier          #+#    #+#             */
-/*   Updated: 2021/12/13 10:58:44 by ocartier         ###   ########lyon.fr   */
+/*   Updated: 2021/12/14 12:18:34 by ocartier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ t_prev_list	*add_prevs(t_prev_list **prevs, char *buf, int fd)
 	{
 		if (curr->fd == fd)
 		{
-			curr->prev = ft_strjoin(curr->prev, buf);
+			curr->prev = gnl_strjoin(curr->prev, buf);
 			return (curr);
 		}
 		if (!curr->next)
@@ -51,7 +51,7 @@ t_prev_list	*add_prevs(t_prev_list **prevs, char *buf, int fd)
 	elem = new_prevs(fd);
 	if (!elem)
 		return (NULL);
-	elem->prev = ft_strjoin(elem->prev, buf);
+	elem->prev = gnl_strjoin(elem->prev, buf);
 	curr->next = elem;
 	return (elem);
 }
@@ -116,11 +116,11 @@ char	*get_next_line(int fd, int do_clear)
 	cur = charchr(cur_prev->prev, '\n');
 	if (cur >= 0)
 	{
-		readed = ft_substr(cur_prev->prev, 0, cur + 1);
+		readed = gnl_substr(cur_prev->prev, 0, cur + 1);
 		shiftstr(&(cur_prev->prev), cur + 1);
 	}
 	else
-		readed = ft_substr(cur_prev->prev, 0, ft_strlen(cur_prev->prev));
+		readed = gnl_substr(cur_prev->prev, 0, ft_strlen(cur_prev->prev));
 	if (cur < 0 || do_clear)
 		prevs = delete_prev(prevs, fd);
 	if (ft_strlen(readed) == 0)
