@@ -6,14 +6,16 @@
 /*   By: ocartier <ocartier@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/13 10:56:30 by ocartier          #+#    #+#             */
-/*   Updated: 2021/12/14 12:18:08 by ocartier         ###   ########.fr       */
+/*   Updated: 2022/01/31 15:47:48 by ocartier         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GET_NEXT_LINE_H
 # define GET_NEXT_LINE_H
 # include <unistd.h>
-# include "../libft.h"
+# include <stdlib.h>
+# include <fcntl.h>
+# include "libft.h"
 # define GNL_CLEAR 1
 # define GNL_KEEP 0
 
