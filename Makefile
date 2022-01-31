@@ -90,11 +90,11 @@ $(NAME):	$(OBJS)
 
 clean:
 	@rm -rf $(DIR_OBJS)
-	@printf "$(YELLOW)$(DIR_OBJS) removed\n"
+	@printf "$(YELLOW)$(DIR_OBJS) removed$(END)\n"
 
 fclean:		clean
 	@rm -rdf	$(NAME)
-	@printf "$(YELLOW)$(NAME) removed\n"
+	@printf "$(YELLOW)$(NAME) removed$(END)\n"
 
 re:			fclean all
 
