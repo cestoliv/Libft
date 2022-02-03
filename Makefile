@@ -75,27 +75,28 @@ GREEN		=	\033[32m
 END			=	\033[0m
 
 $(DIR_OBJS)/%.o: $(DIR_SRCS)/%.c $(INCS) Makefile
-	@mkdir -p $(DIR_OBJS)
-	@mkdir -p $(DIR_OBJS)/get_next_line
-	@mkdir -p $(DIR_OBJS)/ft_printf
-	@mkdir -p $(DIR_OBJS)/ft_printf/print_utils
-	@$(CC) $(FLAGS) -D BUFFER_SIZE=${BUFFER_SIZE} -I $(DIR_INCS) -c $< -o $@
-	@printf "$(ERASE)$(BLUE) > Compilation :$(END) $<"
+	mkdir -p $(DIR_OBJS)
+	mkdir -p $(DIR_OBJS)/get_next_line
+	mkdir -p $(DIR_OBJS)/ft_printf
+	mkdir -p $(DIR_OBJS)/ft_printf/print_utils
+	$(CC) $(FLAGS) -D BUFFER_SIZE=${BUFFER_SIZE} -I $(DIR_INCS) -c $< -o $@
+	printf "$(ERASE)$(BLUE) > Compilation :$(END) $<"
 
 all:	$(NAME)
 
 $(NAME):	$(OBJS)
-	@ar rcs $@ $^
-	@printf "$(ERASE)$(GREEN)$@ made\n$(END)"
+	ar rcs $@ $^
+	printf "$(ERASE)$(GREEN)$@ made\n$(END)"
 
 clean:
-	@rm -rf $(DIR_OBJS)
-	@printf "$(YELLOW)$(DIR_OBJS) removed$(END)\n"
+	rm -rf $(DIR_OBJS)
+	printf "$(YELLOW)$(DIR_OBJS) removed$(END)\n"
 
 fclean:		clean
-	@rm -rdf	$(NAME)
-	@printf "$(YELLOW)$(NAME) removed$(END)\n"
+	rm -rdf	$(NAME)
+	printf "$(YELLOW)$(NAME) removed$(END)\n"
 
 re:			fclean all
 
 .PHONY:	all clean fclean re
+.SILENT:
