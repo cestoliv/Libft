@@ -68,11 +68,11 @@ SRCS		:=	$(addprefix $(DIR_SRCS)/,$(LST_SRCS))
 OBJS		:=	$(addprefix $(DIR_OBJS)/,$(LST_OBJS))
 INCS		:=	$(addprefix $(DIR_INCS)/,$(LST_INCS))
 
-ERASE		=	\033[2K\r
-BLUE		=	\033[34m
-YELLOW		=	\033[33m
-GREEN		=	\033[32m
-END			=	\033[0m
+ERASE		:=	\033[2K\r
+BLUE		:=	\033[34m
+YELLOW		:=	\033[33m
+GREEN		:=	\033[32m
+END			:=	\033[0m
 
 $(DIR_OBJS)/%.o: $(DIR_SRCS)/%.c $(INCS) Makefile
 	mkdir -p $(DIR_OBJS)
